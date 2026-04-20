@@ -45,12 +45,12 @@ echo " nginx already exist .. $y skiping $n"
 fi
 
 
-dnf list installed mongosh  &>> $LOG_FILE#install if it is not found
-if [ $? -ne 0 ]; then
-dnf install mongodb-mongosh -y
-VALIDATE $? "mongosh"
-else 
-echo "mongosh already exist .. $y skiping $n"
-fi
+# dnf list installed mongosh  &>> $LOG_FILE#install if it is not found
+# if [ $? -ne 0 ]; then
+# dnf install mongodb-mongosh -y
+# VALIDATE $? "mongosh"
+# else 
+# echo "mongosh already exist .. $y skiping $n"
+# fi
 
 
