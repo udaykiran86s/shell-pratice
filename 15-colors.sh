@@ -1,0 +1,44 @@
+#!/bin/bash
+r="\e[31m"
+g="\e[32m"
+y="\e[33m"
+n="\e[0m"
+USERID=(id -u)
+
+if [ $USERID -ne 0 ];then
+    echo "please run with root user"
+    exit 1
+fi
+
+VALIDATE(){
+    if [ $1 -ne 0 ] ; then
+    echo "installation $r failed $n need root permission"
+    exit 1
+else 
+    echo "installing  is $g success $n"
+}
+
+dnf list installed mysq #install if it is not found
+if [ $? -ne 0 ]; then
+dnf install mysql -y
+VALIDATE $? "mysql"
+else 
+echo "mysql already exist .. $y skiping $n"
+fi
+
+dnf list installed nginx #install if it is not found
+if [ $? -ne 0 ]; then
+dnf install nginx -y
+VALIDATE $? "NGINX"
+else 
+echo " nginx already exist .. $y skiping $n"
+fi
+
+
+dnf list installed mongosh #install if it is not found
+if [ $? -ne 0 ]; then
+dnf install mongodb-mongosh -y
+VALIDATE $? "mongosh"
+else 
+echo "mongosh already exist .. $y skiping $n"
+fi
