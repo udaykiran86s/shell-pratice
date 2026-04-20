@@ -11,3 +11,5 @@ echo "sum =$sum"
 
 leaders=("modi" "tinku"  "uday")
 echo "all leaders: ${leaders[@]}"
+echo "first leaders: ${leaders[0]}"
+
