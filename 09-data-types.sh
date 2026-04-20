@@ -2,7 +2,9 @@
 
 
 
-NUMBER1 =100
-NUMBER2 =200
+number1=100
+number2=200
+name=devops
 
-sum=$(($number1+number2))
+sum=$(($number1+$number2+$name))
+echo "sum =$sum"
