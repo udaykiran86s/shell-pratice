@@ -23,7 +23,7 @@ VALIDATE() {
     echo "installation $r failed $n need root permission"
     exit 1
 else 
-    echo "installing  is $g success $n"
+    echo "installing  is  -e $g success $n"
     fi
 }
 
