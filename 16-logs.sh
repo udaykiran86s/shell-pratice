@@ -11,7 +11,7 @@ SCRIPT_NAME=$( echo $0 | cut -d "." -f1)
 LOG_FILE="LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 
-echo "Script started executed at: $(date)"
+echo "Script started executed at: $(date)"  | tee -a $LOG_FILE
 
 if [ $USERID -ne 0 ];then
    echo "please run with root user"
@@ -24,6 +24,7 @@ VALIDATE() {
     exit 1
 else 
     echo "installing  is $g success $n"
+    fi
 }
 
 dnf list installed mysql &>> $LOG_FILE
