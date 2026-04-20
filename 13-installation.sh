@@ -8,7 +8,7 @@ if [ $USERID -ne 0 ];then
 fi
 
 VALIDATE(){
-    f [ $1 -ne 0 ] ; then
+    if [ $1 -ne 0 ] ; then
     echo "installation failed need root permission"
     exit 1
 else 
