@@ -5,8 +5,9 @@ r="\e[31m"
 g="\e[32m"
 y="\e[33m"
 n="\e[0m"
+
 if [ $USERID -ne 0 ];then
-    echo "please run with root user"
+   echo "please run with root user"
     exit 1
 fi
 LOGS_FOLDER="/var/log/shel-script"
